@@ -53,6 +53,9 @@ class SQL(object):
         import sqlalchemy
         import sqlalchemy.orm
         import threading
+        
+        # Lazily import
+        sqlite3 = None
 
         # Require that file already exist for SQLite
         matches = re.search(r"^sqlite:///(.+)$", url)
